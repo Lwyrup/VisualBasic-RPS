@@ -12,15 +12,19 @@
 		Sub DetermineRound(weapon1 As String, weapon2 As String)
 			If String.Equals(weapon1, weapon2) Then
 				Console.WriteLine("Tie")
-			ElseIf String.Equals(weapon1, "rock") And String.Equals(weapon2, "scissors") Or
-				String.Equals(weapon1, "paper") And String.Equals(weapon2, "rock") Or
-				String.Equals(weapon1, "scissors") And String.Equals(weapon2, "paper") Then
+			ElseIf WinCondition(weapon1, weapon2) Then
 				Console.WriteLine("Player one wins")
 			Else
 				Console.WriteLine("Player two wins")
 			End If
 			Console.ReadKey()
 		End Sub
+
+		Private Function WinCondition(winner As String, loser As String)
+			Return String.Equals(winner, "rock") And String.Equals(loser, "scissors") Or
+				String.Equals(winner, "paper") And String.Equals(loser, "rock") Or
+				String.Equals(winner, "scissors") And String.Equals(loser, "paper")
+		End Function
 
 	End Class
 
