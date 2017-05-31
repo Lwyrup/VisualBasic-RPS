@@ -10,15 +10,16 @@
 		End Function
 
 		Sub DetermineRound(weapon1 As String, weapon2 As String)
-			If String.Compare(weapon1, "rock") And String.Compare(weapon2, "scissors") Or
-				String.Compare(weapon1, "paper") And String.Compare(weapon2, "rock") Or
-				String.Compare(weapon1, "scissors") And String.Compare(weapon2, "paper") Then
-				Console.WriteLine("Player one wins")
-			ElseIf String.Compare(weapon1, weapon2) Then
+			If String.Equals(weapon1, weapon2) Then
 				Console.WriteLine("Tie")
+			ElseIf String.Equals(weapon1, "rock") And String.Equals(weapon2, "scissors") Or
+				String.Equals(weapon1, "paper") And String.Equals(weapon2, "rock") Or
+				String.Equals(weapon1, "scissors") And String.Equals(weapon2, "paper") Then
+				Console.WriteLine("Player one wins")
 			Else
 				Console.WriteLine("Player two wins")
 			End If
+			Console.ReadKey()
 		End Sub
 
 	End Class
