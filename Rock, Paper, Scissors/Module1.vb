@@ -1,7 +1,12 @@
-﻿Module Module1
+﻿Namespace rpsGame
 
-	Sub Main()
+	Module Module1
 
-	End Sub
+		Sub Main()
 
-End Module
+		End Sub
+
+	End Module
+
+End Namespace
+
