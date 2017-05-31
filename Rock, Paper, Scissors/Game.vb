@@ -1,11 +1,13 @@
 ﻿Namespace rpsGame
 
 	Public Class Game
-		'players: an array of two player objects'
-		'choices: const array of valid choices'
+		'players: an array of two player objects
+		'Dim players() As String = {"player1", "player2"}
+		'choices: array of valid choices
+		Dim Choices() As String = {"rock", "paper", "scissors"}
 
 		Function AskForChoice()
-			Console.WriteLine("Rock, Paper, or Scissors?")
+			Console.WriteLine("{0}, {1}, or {2}?", Choices(0), Choices(1), Choices(2))
 			Return Console.ReadLine()
 		End Function
 
