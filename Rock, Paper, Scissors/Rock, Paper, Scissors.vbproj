@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C6B1E812-FB98-4225-B78C-B7FBC12DCE91}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Rock__Paper__Scissors.Module1</StartupObject>
+    <StartupObject>Rock__Paper__Scissors.rpsGame.Module1</StartupObject>
     <RootNamespace>Rock__Paper__Scissors</RootNamespace>
     <AssemblyName>Rock, Paper, Scissors</AssemblyName>
     <FileAlignment>512</FileAlignment>
