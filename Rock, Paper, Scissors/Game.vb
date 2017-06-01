@@ -1,11 +1,14 @@
 ﻿Namespace rpsGame
 
 	Public Class Game
+		Sub New(Optional count As Integer = 2)
+			'create players
+			Rounds = count
+		End Sub
+
 		'players: an array of two player objects
-		'Dim players() As String = {"player1", "player2"}
-		'numberof rounds?'
-		'choices: array of valid choices
 		Dim Choices() As String = {"rock", "paper", "scissors"}
+		Dim Rounds As Integer
 
 		Function AskForChoice()
 			Dim input As String = Ask()
