@@ -1,6 +1,12 @@
 ﻿Namespace rpsGame
 
 	Public Class Player
+		Sub New()
+			Console.WriteLine("Enter your name.")
+			Name = Console.ReadLine
+			Console.WriteLine("")
+		End Sub
+
 		Private _name As String
 		Public Property Name() As String
 			Get
