@@ -12,9 +12,12 @@
 		Dim Rounds As Integer
 
 		Sub Start()
-			Players(0).Choice = AskForChoice()
-			Players(1).Choice = AskForChoice()
-			DetermineRound(Players(0).Choice, Players(1).Choice)
+			For i As Integer = 0 To Rounds
+				Players(0).Choice = AskForChoice()
+				Players(1).Choice = AskForChoice()
+				DetermineRound(Players(0).Choice, Players(1).Choice)
+			Next
+			Console.ReadKey()
 		End Sub
 
 		Function AskForChoice()
@@ -34,7 +37,6 @@
 			Else
 				Console.WriteLine("!!!{0} wins!!!", Players(1).Name)
 			End If
-			Console.ReadKey()
 		End Sub
 
 		Private Function WinCondition(winner As String, loser As String)
