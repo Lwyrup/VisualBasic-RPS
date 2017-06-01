@@ -3,12 +3,16 @@
 	Public Class Game
 		'players: an array of two player objects
 		'Dim players() As String = {"player1", "player2"}
+		'numberof rounds?'
 		'choices: array of valid choices
 		Dim Choices() As String = {"rock", "paper", "scissors"}
 
 		Function AskForChoice()
-			Console.WriteLine("{0}, {1}, or {2}?", Choices(0), Choices(1), Choices(2))
-			Return Console.ReadLine()
+			Dim input As String = Ask()
+			While Not Choices.Contains(input)
+				input = Ask("Invalid option. Try again.")
+			End While
+			Return input
 		End Function
 
 		Sub DetermineRound(weapon1 As String, weapon2 As String)
@@ -26,6 +30,19 @@
 			Return String.Equals(winner, "rock") And String.Equals(loser, "scissors") Or
 				String.Equals(winner, "paper") And String.Equals(loser, "rock") Or
 				String.Equals(winner, "scissors") And String.Equals(loser, "paper")
+		End Function
+
+		Private Function ValidateInput(input As String)
+			If Choices.Contains(input) Then
+				Return True
+			Else
+				Return False
+			End If
+		End Function
+
+		Private Function Ask(Optional message As String = "Rock, Paper, or Scissors?")
+			Console.WriteLine(message)
+			Return Console.ReadLine()
 		End Function
 
 	End Class
