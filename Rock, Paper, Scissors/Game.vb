@@ -2,11 +2,11 @@
 
 	Public Class Game
 		Sub New(Optional count As Integer = 2)
-			'create players
+			Players = {New Player, New Player}
 			Rounds = count
 		End Sub
 
-		'players: an array of two player objects
+		Dim Players() As Player
 		Dim Choices() As String = {"rock", "paper", "scissors"}
 		Dim Rounds As Integer
 
@@ -15,6 +15,7 @@
 			While Not Choices.Contains(input)
 				input = Ask("Invalid option. Try again.")
 			End While
+			Console.WriteLine("")
 			Return input
 		End Function
 
@@ -22,9 +23,9 @@
 			If String.Equals(weapon1, weapon2) Then
 				Console.WriteLine("Tie")
 			ElseIf WinCondition(weapon1, weapon2) Then
-				Console.WriteLine("Player one wins")
+				Console.WriteLine("!!!{0} wins!!!", Players(0).Name)
 			Else
-				Console.WriteLine("Player two wins")
+				Console.WriteLine("!!!{0} wins!!!", Players(1).Name)
 			End If
 			Console.ReadKey()
 		End Sub
