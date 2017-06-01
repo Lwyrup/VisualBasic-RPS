@@ -4,11 +4,18 @@
 		Sub New(Optional count As Integer = 2)
 			Players = {New Player, New Player}
 			Rounds = count
+			Start()
 		End Sub
 
 		Dim Players() As Player
 		Dim Choices() As String = {"rock", "paper", "scissors"}
 		Dim Rounds As Integer
+
+		Sub Start()
+			Players(0).Choice = AskForChoice()
+			Players(1).Choice = AskForChoice()
+			DetermineRound(Players(0).Choice, Players(1).Choice)
+		End Sub
 
 		Function AskForChoice()
 			Dim input As String = Ask()
