@@ -36,5 +36,9 @@
 				_score = value
 			End Set
 		End Property
+
+		Function Stats()
+			Return Name + ": " + Score
+		End Function
 	End Class
 End Namespace
