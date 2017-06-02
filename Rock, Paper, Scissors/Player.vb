@@ -26,5 +26,15 @@
 				_choice = value
 			End Set
 		End Property
+
+		Private _score As String
+		Public Property Score() As String
+			Get
+				Return _score
+			End Get
+			Set(ByVal value As String)
+				_score = value
+			End Set
+		End Property
 	End Class
 End Namespace
