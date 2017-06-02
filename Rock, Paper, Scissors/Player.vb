@@ -27,18 +27,18 @@
 			End Set
 		End Property
 
-		Private _score As String
-		Public Property Score() As String
+		Private _score As Integer = 0
+		Public Property Score() As Integer
 			Get
 				Return _score
 			End Get
-			Set(ByVal value As String)
+			Set(ByVal value As Integer)
 				_score = value
 			End Set
 		End Property
 
 		Function Stats()
-			Return Name + ": " + Score
+			Return Name + ": " + CStr(Score)
 		End Function
 	End Class
 End Namespace
