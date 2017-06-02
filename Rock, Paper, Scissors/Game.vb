@@ -25,7 +25,7 @@
 			While Not Choices.Contains(input)
 				input = Ask("Invalid option. Try again.")
 			End While
-			Console.WriteLine("")
+			Console.Clear()
 			Return input
 		End Function
 
