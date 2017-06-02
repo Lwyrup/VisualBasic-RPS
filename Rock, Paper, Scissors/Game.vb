@@ -33,16 +33,20 @@
 			If String.Equals(weapon1, weapon2) Then
 				Console.WriteLine("Tie")
 			ElseIf WinCondition(weapon1, weapon2) Then
-				IncreaseScore(Players(0))
+				RoundWon(Players(0))
 			Else
-				IncreaseScore(Players(1))
+				RoundWon(Players(1))
 			End If
 			ShowScore()
 		End Sub
 
+		Sub RoundWon(winner As Player)
+			IncreaseScore(winner)
+			Console.WriteLine("{0} wins!", Players(1).Name)
+		End Sub
+
 		Sub IncreaseScore(player As Player)
 			player.Score += 1
-			Console.WriteLine("{0} wins!", Players(1).Name)
 		End Sub
 
 		Sub ShowScore()
