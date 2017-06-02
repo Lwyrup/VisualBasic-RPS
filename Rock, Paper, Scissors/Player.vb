@@ -4,7 +4,7 @@
 		Sub New()
 			Console.WriteLine("Enter your name.")
 			Name = Console.ReadLine
-			Console.WriteLine("")
+			Console.Clear()
 		End Sub
 
 		Private _name As String
