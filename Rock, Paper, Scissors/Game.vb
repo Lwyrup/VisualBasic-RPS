@@ -15,7 +15,7 @@
 			For i As Integer = 0 To Rounds
 				Players(0).Choice = AskForChoice()
 				Players(1).Choice = AskForChoice()
-				DetermineRound(Players(0).Choice, Players(1).Choice)
+				EndRound()
 			Next
 			Console.ReadKey()
 		End Sub
@@ -29,6 +29,11 @@
 			Return input
 		End Function
 
+		Sub EndRound()
+			DetermineRound(Players(0).Choice, Players(1).Choice)
+			ShowScore()
+		End Sub
+
 		Sub DetermineRound(weapon1 As String, weapon2 As String)
 			If String.Equals(weapon1, weapon2) Then
 				Console.WriteLine("Tie")
@@ -37,12 +42,11 @@
 			Else
 				RoundWon(Players(1))
 			End If
-			ShowScore()
 		End Sub
 
 		Sub RoundWon(winner As Player)
 			IncreaseScore(winner)
-			Console.WriteLine("{0} wins!", Players(1).Name)
+			Console.WriteLine("{0} wins!", winner.Name)
 		End Sub
 
 		Sub IncreaseScore(player As Player)
